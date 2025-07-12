@@ -1,0 +1,23 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "recipe app for practice",
+  "license": "ISC",
+  "author": "Shaan Hossain",
+  "type": "module",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir dist",
+    "dev": "parcel index.html --open",
+    "clean": "rm -rf dist .parcel-cache"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.15.4",
+    "parcel": "^2.12.0",
+    "sass": "^1.69.5"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
