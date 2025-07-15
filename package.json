@@ -19,5 +19,9 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "core-js": "^3.44.0",
+    "regenerator-runtime": "^0.14.1"
+  }
 }
