@@ -28,6 +28,7 @@ A modern recipe application built with vanilla JavaScript and Parcel v2.
 ### Development
 
 Start the development server:
+
 ```bash
 npm start
 # or
@@ -39,6 +40,7 @@ The app will be available at `http://localhost:1234`
 ### Building for Production
 
 Build the project:
+
 ```bash
 npm run build
 ```
