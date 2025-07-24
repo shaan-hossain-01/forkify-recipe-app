@@ -1,16 +1,14 @@
+import { API_URL } from './config.js';
+import { getJSON } from './helpers.js'; // Assuming you have a helper function to fetch JSON data
+
 export const state = {
   recipe: {},
 };
 
 export const loadRecipe = async function (id) {
   try {
-    const res = await fetch(
-      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
-    );
-    const data = await res.json();
-
-    // Check if the response is ok, if not throw an error
-    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+    // Fetching the recipe data from the API
+    const data = await getJSON(`${API_URL}/${id}`);
 
     //Destructuring the data
     const { recipe } = data.data;
@@ -28,6 +26,6 @@ export const loadRecipe = async function (id) {
     console.log(state.recipe);
   } catch (err) {
     // Re-throw the error so it can be handled by the controller
-    throw err;
+    console.error(`${err} 💥`);
   }
 };
