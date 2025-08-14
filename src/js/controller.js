@@ -4,7 +4,6 @@ import * as model from './model.js'; // Importing the model to handle data fetch
 import 'core-js/stable';
 import 'regenerator-runtime/runtime'; // for async/await support
 
-
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
@@ -27,8 +26,9 @@ async function controlRecipes() {
   }
 }
 
-['load', 'hashchange'].forEach(ev =>
-  window.addEventListener(ev, controlRecipes)
-);
+const init = function () {
+  recipeView.addHandlerRender(controlRecipes);
+};
+init();
 // window.addEventListener('hashchange', controlRecipes);
 // window.addEventListener('load', controlRecipes);

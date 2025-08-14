@@ -18,6 +18,6 @@ export const getJSON = async function (url) {
 
     return data;
   } catch (err) {
-    throw err; // Re-throw the error to be handled by the caller
+      throw err; // Re-throw the error to be handled by the caller
   }
 };
