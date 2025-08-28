@@ -1,4 +1,5 @@
 import recipeView from './views/recipeView.js';
+import resultsView from './views/resultsView.js';
 import searchView from './views/searchView.js';
 import * as model from './model.js'; // Importing the model to handle data fetching and manipulation
 
@@ -25,6 +26,7 @@ async function controlRecipes() {
 
 const controlSearchResults = async function () {
   try {
+    resultsView.renderSpinner();
     //1) Get the query from the search view
     const query = searchView.getQuery();
     if (!query) return; // If no query, return early
