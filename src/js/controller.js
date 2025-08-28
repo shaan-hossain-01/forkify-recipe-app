@@ -6,6 +6,10 @@ import * as model from './model.js'; // Importing the model to handle data fetch
 import 'core-js/stable';
 import 'regenerator-runtime/runtime'; // for async/await support
 
+if (module.hot) {
+  module.hot.accept();
+}
+
 async function controlRecipes() {
   try {
     const id = window.location.hash.slice(1); // Get the ID from the URL hash
@@ -27,7 +31,7 @@ async function controlRecipes() {
 const controlSearchResults = async function () {
   try {
     resultsView.renderSpinner();
-    //1) Get the query from the search view
+    // 1) Get the query from the search view
     const query = searchView.getQuery();
     if (!query) return; // If no query, return early
 
@@ -36,7 +40,7 @@ const controlSearchResults = async function () {
 
     // 3) Render the search results in the search view
     const { results } = model.state.search;
-    console.log(results);
+    resultsView.render(results);
   } catch (err) {
     console.log(err);
   }
